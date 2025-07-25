@@ -1,0 +1,36 @@
+.splide__arrow--prev svg {
+  transform: inherit;
+}
+.splide__arrow svg {
+  fill: #fff;
+  height: 2.2em;
+  width: 2.2em;
+}
+/* Custom Pagination Styles */
+#testimonial-slider .splide__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+#testimonial-slider .splide__pagination__page {
+  width: 10px;
+  height: 6px;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+#testimonial-slider .splide__pagination__page.is-active {
+  width: 40px;
+  background-color: #c084fc;
+}
+
+.splide__slide_testimonial:hover .testimonial_bg_overlay {
+  height: 100%;
+}
+#testimonial-slider .is-next .testimonial_bg_overlay {
+  height: 100%;
+}
