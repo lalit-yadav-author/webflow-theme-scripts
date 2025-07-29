@@ -34,3 +34,11 @@
 #testimonial-slider .is-next .testimonial_bg_overlay {
   height: 100%;
 }
+#testimonial-slider:hover .testimonial_bg_gradient {
+  height: 100%;
+}
+
+#testimonial-slider .is-next .testimonial_bg_gradient {
+  height: 100%;
+}
+
