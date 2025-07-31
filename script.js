@@ -111,3 +111,20 @@ function initTestimonialSlider() {
 
   slider.mount();
 }
+
+  function initTestimonialSlider(selector = '#testimonial-slider-feedback') {
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.querySelector(selector);
+      if (slider) {
+        new Splide(selector, {
+          type: 'fade',
+          rewind: true,
+          autoplay: true,
+          interval: 2000,
+          speed: 800,
+          arrows: true,
+          pagination: false,
+        }).mount();
+      }
+    });
+  }
