@@ -112,7 +112,7 @@ function initTestimonialSlider() {
   slider.mount();
 }
 
-  function initTestimonialSlider(selector = '#testimonial-slider-feedback') {
+  function initFeedbackSlider(selector = '#testimonial-slider-feedback') {
     document.addEventListener('DOMContentLoaded', function () {
       const slider = document.querySelector(selector);
       if (slider) {
