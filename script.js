@@ -131,3 +131,24 @@ function initFeedbackSlider() {
   slider.mount();
 }
 
+function initLogoSlider() {
+    const slider = new Splide('#logo-slider', {
+      type: 'loop',
+      perPage: 4,
+      gap: '2rem',
+      arrows: false,
+      pagination: false,
+      drag: false,
+      autoScroll: {
+        speed: 1,
+      },
+      breakpoints: {
+        991: { perPage: 3 },
+        767: { perPage: 2 },
+        480: { perPage: 2 },
+      },
+    });
+
+    slider.mount(window.splide.Extensions);
+  }
+
