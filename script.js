@@ -113,23 +113,42 @@ function initTestimonialSlider() {
 }
 
 function initFeedbackSlider() {
-  const selector = "#testimonial-slider-feedback";
-  const sliderElement = document.querySelector(selector);
-
-  if (!sliderElement) return;
-
-  const slider = new Splide(selector, {
-    type: "fade",
-    rewind: true,
+  const slider = new Splide("#testimonial-slider-feedback", {
+    type: "loop",
     autoplay: true,
-    interval: 2000,
-    speed: 800,
-    arrows: true,
+    focus: 0,
+    perPage: 1,
+    gap: "1rem",
     pagination: false,
+    arrows: true,
+    breakpoints: {
+      1024: { perPage: 1 },
+      768: { perPage: 1 },
+    },
   });
 
   slider.mount();
 }
+
+
+//function initFeedbackSlider() {
+ // const selector = "#testimonial-slider-feedback";
+ // const sliderElement = document.querySelector(selector);
+
+//  if (!sliderElement) return;
+
+ // const slider = new Splide(selector, {
+ //   type: "fade",
+//    rewind: true,
+//    autoplay: true,
+//    interval: 2000,
+ //   speed: 800,
+//    arrows: true,
+//    pagination: false,
+//  });
+
+//  slider.mount();
+//}
 
 function initLogoSlider() {
     const slider = new Splide('#logo-slider', {
@@ -151,4 +170,5 @@ function initLogoSlider() {
 
     slider.mount(window.splide.Extensions);
   }
+
 
