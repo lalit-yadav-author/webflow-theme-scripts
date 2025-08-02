@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
 🧑‍💻 Developer Notes
 
 Scripts are modular and scoped to avoid conflicts
@@ -128,5 +129,6 @@ For support or improvements, create an issue or open a pull request.
 
 #Restore all functions
 We have created a sandbox environment for you. You can copy and paste any code from the link below. If anything gets deleted or changed by mistake, you can easily restore it from here.
-https://codesandbox.io/p/sandbox/theme-development-h54k3q
+https://codesandbox.io/p/sandbox/datasphere-h54k3q
+
 
