@@ -6,8 +6,6 @@
  * Last Updated: 2 July 2025
  */
 
-console.log("Custom Script");
-
 function initHeroSlider() {
   const splide = new Splide("#hero-slider", {
     type: "loop",
@@ -170,5 +168,6 @@ function initLogoSlider() {
 
     slider.mount(window.splide.Extensions);
   }
+
 
 
