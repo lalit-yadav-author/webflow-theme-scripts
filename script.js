@@ -9,7 +9,10 @@
 console.log('Hello!')
 
 function initHeroSlider() {
-  const splide = new Splide("#hero-slider", {
+  const sliderEl = document.querySelector("#hero-slider");
+  if (!sliderEl) return;
+
+  const splide = new Splide(sliderEl, {
     type: "loop",
     perPage: 1,
     autoplay: true,
@@ -19,7 +22,7 @@ function initHeroSlider() {
     pagination: false,
   });
 
-  const slides = document.querySelectorAll(".splide__slide");
+  const slides = sliderEl.querySelectorAll(".splide__slide");
 
   const timelines = Array.from(slides).map((slide) => {
     const tl = gsap.timeline({ paused: true });
@@ -28,15 +31,9 @@ function initHeroSlider() {
     const paragraph = slide.querySelector("p");
     const button = slide.querySelector("button");
 
-    if (heading) {
-      tl.from(heading, { y: 60, opacity: 0, duration: 1 });
-    }
-    if (paragraph) {
-      tl.from(paragraph, { y: 40, opacity: 0, duration: 0.8 }, "-=0.6");
-    }
-    if (button) {
-      tl.from(button, { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
-    }
+    if (heading) tl.from(heading, { y: 60, opacity: 0, duration: 1 });
+    if (paragraph) tl.from(paragraph, { y: 40, opacity: 0, duration: 0.8 }, "-=0.6");
+    if (button) tl.from(button, { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
 
     return tl;
   });
@@ -48,9 +45,8 @@ function initHeroSlider() {
 
   splide.mount();
 
-  // Hide arrows on tablet and below
   if (window.innerWidth <= 991) {
-    const arrows = document.querySelector(".splide__arrows");
+    const arrows = sliderEl.querySelector(".splide__arrows");
     if (arrows) {
       arrows.style.display = "none";
     }
@@ -58,16 +54,18 @@ function initHeroSlider() {
 }
 
 function initFrontSlider(autoScroll) {
-  new Splide("#splide-front", {
+  const el = document.querySelector("#splide-front");
+  if (!el) return;
+
+  new Splide(el, {
     type: "loop",
-    // drag: 'free',
     focus: "center",
     direction: "rtl",
     arrows: false,
     pagination: false,
     perPage: 4,
     autoScroll: {
-      speed: 4, // Left to right
+      speed: 4,
       pauseOnHover: true,
       pauseOnFocus: false,
     },
@@ -77,15 +75,17 @@ function initFrontSlider(autoScroll) {
 }
 
 function initBackSlider(autoScroll) {
-  new Splide("#splide-back", {
+  const el = document.querySelector("#splide-back");
+  if (!el) return;
+
+  new Splide(el, {
     type: "loop",
-    // drag: 'free',
     focus: "center",
     arrows: false,
     pagination: false,
     perPage: 4,
     autoScroll: {
-      speed: 2, // Right to left
+      speed: 2,
       pauseOnHover: true,
       pauseOnFocus: false,
     },
@@ -95,7 +95,10 @@ function initBackSlider(autoScroll) {
 }
 
 function initTestimonialSlider() {
-  const slider = new Splide("#testimonial-slider", {
+  const el = document.querySelector("#testimonial-slider");
+  if (!el) return;
+
+  new Splide(el, {
     type: "loop",
     autoplay: true,
     focus: 0,
@@ -107,69 +110,50 @@ function initTestimonialSlider() {
       1024: { perPage: 2 },
       768: { perPage: 1 },
     },
-  });
-
-  slider.mount();
+  }).mount();
 }
 
 function initFeedbackSlider() {
-  const slider = new Splide("#testimonial-slider-feedback", {
-    type: "loop",
+  const el = document.querySelector("#testimonial-slider-feedback");
+  if (!el) return;
+
+  new Splide(el, {
+    type: "fade",
+    rewind: true,
     autoplay: true,
-    focus: 0,
-    perPage: 1,
-    gap: "1rem",
-    pagination: false,
+    interval: 2000,
+    speed: 800,
     arrows: true,
+    pagination: false,
     breakpoints: {
       1024: { perPage: 1 },
       768: { perPage: 1 },
     },
-  });
-
-  slider.mount();
+  }).mount();
 }
 
-
-//function initFeedbackSlider() {
- // const selector = "#testimonial-slider-feedback";
- // const sliderElement = document.querySelector(selector);
-
-//  if (!sliderElement) return;
-
- // const slider = new Splide(selector, {
- //   type: "fade",
-//    rewind: true,
-//    autoplay: true,
-//    interval: 2000,
- //   speed: 800,
-//    arrows: true,
-//    pagination: false,
-//  });
-
-//  slider.mount();
-//}
-
 function initLogoSlider() {
-    const slider = new Splide('#logo-slider', {
-      type: 'loop',
-      perPage: 4,
-      gap: '2rem',
-      arrows: false,
-      pagination: false,
-      drag: false,
-      autoScroll: {
-        speed: 1,
-      },
-      breakpoints: {
-        991: { perPage: 3 },
-        767: { perPage: 2 },
-        480: { perPage: 2 },
-      },
-    });
+  const el = document.querySelector("#logo-slider");
+  if (!el) return;
 
-    slider.mount(window.splide.Extensions);
-  }
+  new Splide(el, {
+    type: "loop",
+    perPage: 4,
+    gap: "2rem",
+    arrows: false,
+    pagination: false,
+    drag: false,
+    autoScroll: {
+      speed: 1,
+    },
+    breakpoints: {
+      991: { perPage: 3 },
+      767: { perPage: 2 },
+      480: { perPage: 2 },
+    },
+  }).mount(window.splide.Extensions);
+}
+
 
 
 
