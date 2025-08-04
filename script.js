@@ -6,7 +6,7 @@
  * Last Updated: 2 July 2025
  */
 
-console.log("Custom Script");
+console.log("Custom Script webflow");
 
 function initHeroSlider() {
   const splide = new Splide("#hero-slider", {
@@ -111,3 +111,4 @@ function initTestimonialSlider() {
 
   slider.mount();
 }
+
