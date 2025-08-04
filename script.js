@@ -6,8 +6,6 @@
  * Last Updated: 2 July 2025
  */
 
-console.log('Hello!')
-
 function initHeroSlider() {
   const sliderEl = document.querySelector("#hero-slider");
   if (!sliderEl) return;
@@ -153,6 +151,7 @@ function initLogoSlider() {
     },
   }).mount(window.splide.Extensions);
 }
+
 
 
 
