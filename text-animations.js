@@ -6,7 +6,6 @@
  * Last Updated: 1 feb 2025
  */
 
-console.log("Text Animations version 1");
 
 // ------- Configurable Parameters ------- //
 const fadeStart = window.innerWidth < 768 ? "top 100%" : "top 85%";
@@ -502,11 +501,9 @@ function tiltText() {
 // Ensure fonts are loaded before running animations
 document.fonts.ready
   .then(function () {
-    console.log("Fonts loaded successfully");
     textAnimations();
   })
   .catch(function () {
-    console.error("Font loading error");
   });
 
 //
@@ -524,7 +521,7 @@ function debounce(func) {
 
 // Optional: Define the resize event handling logic
 function handleResize() {
-  console.log("Window resized, refreshing animations");
+  // console.log("Window resized, refreshing animations");
 
   // Revert SplitText instances
   splitTextInstances.forEach((instance) => instance.revert());
@@ -540,3 +537,4 @@ function handleResize() {
 function addResizeListener() {
   window.addEventListener("resize", debounce(handleResize));
 }
+
